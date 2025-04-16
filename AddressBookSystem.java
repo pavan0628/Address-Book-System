@@ -42,7 +42,13 @@ public class AddressBookSystem {
 		System.out.println("\nContact added successfully! Here's your Address Book:");
 		addressBook.displayContacts();
 
+		// Ask if user wants to edit any contact
+		System.out.print("\nEnter the first or last name of the contact you want to edit: ");
+		String nameToEdit = scanner.nextLine();
+
+		// Edit contact based on name
+		addressBook.editContact(nameToEdit);
+
 		scanner.close();
 	}
-
 }
