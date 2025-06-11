@@ -16,7 +16,14 @@ public class AddressBook {
 
     // Method to add a new contact
     public void addContact(Contact contact) {
+        boolean duplicate = contactList.stream()
+                .anyMatch(c -> c.equals(contact));
+        if (duplicate) {
+            System.out.println("Duplicate contact! Not adding.");
+            return;
+        }
         contactList.add(contact);
+        System.out.println("Contact added successfully.");
     }
 
     // Method to display all contacts
